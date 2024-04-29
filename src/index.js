@@ -1,8 +1,9 @@
 import p5 from "p5";
 
 /** @param {p5} p */
+let ctx;
+
 const sketch = (p) => {
-  let ctx;
 
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
@@ -12,19 +13,19 @@ const sketch = (p) => {
   };
 
   p.draw = () => {
-    p.background(100);
+    p.background('#E5E8E2');
 
     const grad = ctx.createRadialGradient(
-      p.width/ 3,
-      p.height/2, 
+      p.width / 2,
+      p.height/ 2, 
       1, 
-      p.width/3, 
+      p.width/2, 
       p.height/2, 
-      p.width/3,
+      p.width/2,
     );
-    grad.addColorStop(0, "rgba(8, 17, 51, 100)");
-    grad.addColorStop(0.6,"rgba(0, 55, 132, 100)");
-    grad.addColorStop(1, "rgba(229, 232, 226, 0)");
+    grad.addColorStop(0.1/2, "rgba(8, 17, 51, 100)");
+    grad.addColorStop(0.5,"rgba(0, 55, 132, 100)");
+    grad.addColorStop(0.9, "rgba(229, 232, 226, 50)");
 
     p.push();
     p.noStroke();
